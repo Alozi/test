@@ -1,16 +1,29 @@
-@import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow');
+@import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700');
+
+body {
+	font-family: 'Georgia', serif;
+	font-size: 11px;
+	color: #9297a3;
+}
 
 a {
 	font-family: 'PT Sans Narrow', sans-serif;
+	font-weight: bold;
 	text-decoration: none;
 	cursor: pointer;
+	color: #9297a3;
+}
+
+h2,
+h3 {
+	font-family: 'PT Sans Narrow', sans-serif;
 }
 
 .wrapper {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: 70px 1fr auto;
-	grid-column-gap: 20px;
+	grid-column-gap: 0px;
 	grid-row-gap: 50px;
 	margin: 0 auto;
 	min-width: 550px;
@@ -37,11 +50,8 @@ header nav li {
 
 header nav a {
 	display: inline-block;
-	color: #9297a3;
 	text-transform: uppercase;
 	line-height: 25px;
-	font-size: 11px;
-	font-weight: bold;
 }
 
 header nav a:hover,
@@ -52,7 +62,7 @@ header nav a:hover,
 
 .login {
 	float: right;
-	height: 100%;
+	height: 70px;
 	width: 100px;
 	padding: 0 30px;
 	border-left: 0.5px solid #9297a3;
@@ -63,8 +73,6 @@ header nav a:hover,
 	margin-top: 25px;
 	line-height: 20px;
 	font-size: 13px;
-	font-weight: bold;
-	color: #9297a3;
 }
 
 .login .active::after {
@@ -85,26 +93,23 @@ header nav a:hover,
 	display: inline-block;
 	float: left;
 	color: #333743;
-	font-weight: bold;
 	line-height: 25px;
 	font-size: 13px;
 	margin-top: 25px;
 }
 
 .cart .amount {
-	height: 25px;
+	height: 30px;
 	width: 25px;
 	font-family: Georgia, serif;
 	line-height: 25px;
-	font-size: 11px;
 	color: #ffffff;
-	background: url(../img/amount-bg.png) no-repeat;
-	background-position: center;
-	margin-left: 8px;
+	background: url(../img/sprites.png) no-repeat -11.5px -8.5px;
+	margin-left: 5px;
 	font-weight: normal;
 }
 
-/* Main */
+/* Galery item */
 
 .galery-item {
 	display: grid;
@@ -129,6 +134,8 @@ header nav a:hover,
 	grid-row: 2 / 3;
 }
 
+/* Description item */
+
 .description-item {
 	margin: 0 auto;
 	max-width: 510px;
@@ -141,11 +148,22 @@ header nav a:hover,
 	color: #9fcede;
 	font-size: 12px;
 	line-height: 16px;
-	font-family: Georgia, serif;
+	margin-left: 13px;
+}
+
+.description-item h1:before {
+	content: "";
+	display: inline-block;
+	vertical-align: middle;
+	background: url(../img/sprites.png) no-repeat -18px -67px;
+	height: 13px;
+	width: 13px;
 }
 
 .description-item h1 a {
+	font-weight: normal;
 	color: #9fcede;	
+	font-family: 'Georgia', serif;
 }
 
 .description-item h1 a:hover {
@@ -161,7 +179,6 @@ header nav a:hover,
 	font-weight: bold;
 	width: 280px;
 	margin: 0 auto;
-	font-family: 'PT Sans Narrow', sans-serif;
 	text-transform: uppercase;
 }
 
@@ -170,7 +187,6 @@ header nav a:hover,
 	color: #303032;
 	font-size: 22px;
 	line-height: 25px;
-	font-family: Georgia, serif;
 }
 
 .description-item h3,
@@ -179,15 +195,12 @@ header nav a:hover,
 	font-size: 13px;
 	line-height: 25px;
 	font-weight: bold;
-	font-family: 'PT Sans Narrow', sans-serif;	
 }
 
 .description-item p {
 	min-width: 280px;
-	color: #9297a3;
 	font-size: 12px;
 	line-height: 16px;
-	font-family: Georgia, serif;
 	margin: 0 auto;
 }
 
@@ -197,6 +210,14 @@ header nav a:hover,
 }
 
 .color-list {
+	margin-top: 70px; 
+	text-align: left;
+}
+
+.color-list h3 {
+	border-bottom: 0.5px solid #9297a3;
+	width: 150px;
+	margin-left: 20px;
 }
 
 .color-list input {
@@ -204,36 +225,62 @@ header nav a:hover,
 }
 
 .color-list label {
+	cursor: pointer;
 	display: block;
-	color: #9297a3;
 	font-size: 13px;
 	line-height: 25px;
-	font-family: Georgia, serif;
 	padding-left: 20px;
+	background: url(../img/sprites.png) no-repeat -18px -110px;
+	vertical-align: middle;
 }
 
-.color-list label[for="blue"] {
-	background: url(../img/rect-blue.png) no-repeat 0;
+.radiobutton:checked + label {
+	background: url(../img/sprites.png) no-repeat -20px -160px;
 }
 
-.color-list label[for="black"] {
-	background: url(../img/rect-black.png) no-repeat 0;
+.color-list label[for="blue"]:before{
+	content: "";
+	display: inline-block;
+	vertical-align: middle;
+	background: url(../img/sprites.png) no-repeat -20px -221px;
+	height: 12px;
+	width: 12px;
+	padding-right: 10px;
+}
+
+.color-list label[for="black"]:before {
+	content: "";
+	display: inline-block;
+	vertical-align: middle;
+	background: url(../img/sprites.png) no-repeat -20px -267px;
+	height: 12px;
+	width: 12px;
+	padding-right: 10px;
 }
 
 button {
 	text-align: center;
 	height: 45px;
 	width: 80%;
-	margin: 0 auto;
+	margin: 120px auto 0 auto;
 	background-color: #afa394;
 	color: #ffffff;
-	font-family: Georgia, serif;
 	font-size: 13px;
 	line-height: 25px;
 	border: none;
 	border-radius: 2px;
+	cursor: pointer;
+
+	transition-property: color, background-color;
+	transition-duration: 1s;
+	animation-timing-function: linear;
 }
 
+button:hover {
+	color: #afa394;
+	border: 1px solid #afa394;
+	background-color: #ffffff;
+}
 
 @media (max-width: 830px) {
 	.galery-item,
@@ -258,24 +305,21 @@ button {
 /* Catalog */ 
 
 .catalog {
-	padding-top: 50px;
+	padding-top: 70px;
 	grid-column: span 2;
 }
 
 .catalog h2 {
 	text-align: center;
-	color: #9297a3;
-	font-size: 11px;
 	line-height: 16px;
-	font-family: Georgia, serif;
+	font-family: 'Georgia', serif;
 }
 
 .catalog h2 span {
 	color: #333743;
-	font-family: 'PT Sans Narrow', sans-serif;
+	
 	text-transform: uppercase;
 	font-size: 16px;
-	font-family: 16px;
 	font-weight: bold;
 }
 
@@ -286,34 +330,36 @@ button {
 	flex-wrap: wrap;
 	margin: 20px auto 0 auto;
 	padding: 0 100px;
-
 }
 
 .catalog-item {
 	box-sizing: border-box;
 	padding: 10px;
+	width: 225px;
 }
 
-/*
 .catalog-item h3 {
-	color: #333743;
-	font-size: 16px;
-	line-height: 85px;
+	float: left;
+	max-width: 150px;
+	word-wrap: break-word;
+	margin: 5px 0 0 10px; 
 	font-weight: bold;
-	font-family: 'PT Sans Narrow', sans-serif;
+	font-size: 16px;
+	color: #333743;
+	text-transform: uppercase;
 }
 
 .catalog-item strong {
-	color: #9297a3;
+	float: right;
+	max-width: 50px;
+	word-wrap: break-word;
+	margin-top: 5px;
 	font-size: 13px;
-	line-height: 85px;
-	font-family: Georgia, serif;
 }
 
 .catalog-item p {
-	color: #9297a3;
-	font-size: 11px;
-	line-height: 85px;
-	font-family: Georgia, serif;
+	width: 100%;
+	overflow: hidden;
+	margin-left: 10px;
+	line-height: 16px;
 }
-*/
